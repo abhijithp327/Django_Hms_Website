@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="{% url 'home' %}">Hospital Management System</a>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+        {% if not request.user.is_staff %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin_login' %}">LogIn</a>
+        </li>
+        {% endif %}
+        <!-- Dropdown -->
+        {% if request.user.is_staff %}
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Doctor</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'view_doctor' %}">View_Doctor</a>
+                <a class="dropdown-item" href="{% url 'add_doctor' %}">Add_Doctor</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Patient</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'view_patient' %}">View_Patient</a>
+                <a class="dropdown-item" href="{% url 'add_patient' %}">Add_Patient</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Appointment</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'view_appointment' %}">View_Appointment</a>
+                <a class="dropdown-item" href="{% url 'add_appointment' %}">Add_Appointment</a>
+            </div>
+        </li>
+
+        <li class=" nav-item ">
+            <a class="nav-link " href="{% url 'logout_admin' %} ">Logout</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

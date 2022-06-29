@@ -1,0 +1,42 @@
+{% include 'base.html' %} {% include 'navigation.html' %}
+<style>
+    .mydivstyle:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-20px);
+    }
+
+    hr.rounded {
+        border-top: 10px soild lightblue;
+        border-radius: 5px;
+    }
+</style>
+
+
+
+{% block content %}
+
+<div class="container" style="margin-top:50px;">
+
+    <h1 class="text-center">Contact Us</h1>
+    <div class="row mt-5 text-center ">
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="bi bi-telephone-fill"></i> Contact</h4>
+            <p class="text-danger font-weight-bold mt-3"><a href="tel:+917878987898">+917878987898</a></p>
+
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle ">
+            <h4><i class="bi bi-envelope-fill"></i> Send-email</h4>
+            <p class="font-weight-bold mt-3"><a href="mailto:hospitalmgmt@gmail.com">hospitalmgmt@gmail.com</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="fa-solid fa-address-card"></i> Office Address</h4>
+            <p class="font-weight-bold mt-3"><a href="https://maps.google.com/maps?q=nooranad">nooranad,kerala</a></p>
+        </div>
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4> <i class="bi bi-alarm-fill"></i> Office Time</h4>
+            <p class="font-weight-bold mt-3">10AM to 5PM</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} {% include 'footer.html' %}

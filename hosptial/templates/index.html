@@ -1,0 +1,55 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %} 
+
+<style>
+.mydivstyle:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-20px);
+}
+
+</style>
+
+
+{% block content %}
+<h1 class="text-center">Admin Dashboard</h1>
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 mydivstyle">
+            <h2 style="color: red;">{{d}}</h2>
+            <a href="{% url 'view_doctor' %}">
+
+            <h4 style="color:blue">Doctors</h4>
+            <hr class="rounded"></a>
+            </a>
+            
+        </div>
+
+        <div class="col-sm-4 mydivstyle">
+            <h2 style="color: red;">{{p}}</h2>
+            <a href="{% url 'view_patient' %}">
+
+            <h4 style="color:blue">Patients</h4>
+            <hr class="rounded"></a>
+            </a>
+            
+        </div>
+
+        <div class="col-sm-4 mydivstyle">
+            <h2 style="color: red;">{{a}}</h2>
+            <a href="{% url 'view_appointment' %}">
+
+            <h4 style="color:blue">Appointments</h4>
+            <hr class="rounded"></a>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %} 
+{% include 'footer.html' %}
